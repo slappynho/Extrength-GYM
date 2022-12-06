@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <title>Extrenght | Log In</title>
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/login.css">
+    <link rel="shortcut icon" href="./assets/images/logoPagina.png" type="image/x-icon">
+</head>
+
+
+<body>
+    <div id="app">
+        <div class="bike-loader">
+            <div id="loop" class="center"></div>
+                <div id="bike-wrapper" class="center">
+                <div id="bike" class="centerBike"></div>
+            </div>
+        </div>
+        <div class="logInContainer" id="container">
+            <div class="form-container sign-up-container">
+                <form id="formulario">
+                    <h1>Create Account</h1>
+
+                    <span>use your email for registration</span>
+                    <div class="formulario__grupo" id="grupo__usuario">
+                        <label for="usuario" class="formulario__label"><!-- First Name --></label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="First Name"  v-model="firstName">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">The name must be 4 to 16 digits long and can only contain numbers, letters, and an underscore.</p>
+                    </div>
+        
+                    <!-- Grupo: Nombre -->
+                    <div class="formulario__grupo" id="grupo__nombre">
+                        <label for="nombre" class="formulario__label"><!-- Last Name --></label>
+                        <div class="formulario__grupo-input">
+                            <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Last Name" v-model="lastName">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">The last name must be between 4 and 16 digits and can only contain numbers, letters and an underscore.</p>
+                    </div>
+                    <!-- Grupo: Correo Electronico -->
+                    <div class="formulario__grupo" id="grupo__correo">
+                        <label for="correo" class="formulario__label"><!-- Email --></label>
+                        <div class="formulario__grupo-input">
+                            <input type="email" class="formulario__input" name="correo" id="correo" placeholder="Email" v-model="email">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">The email can only contain letters, numbers, periods, hyphens and underscores.</p>
+                    </div>
+                    
+                    <!-- Grupo: Contraseña -->
+                    <div class="formulario__grupo" id="grupo__password">
+                        <label for="password" class="formulario__label"><!-- Password --></label>
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="formulario__input" name="password" id="password" v-model="password" placeholder="Password"> 
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">The password has to be from 4 to 12 digits.                        </p>
+                    </div>
+        
+                    <!-- Grupo: Contraseña 2 -->
+                    <div class="formulario__grupo" id="grupo__password2">
+                        <label for="password2" class="formulario__label"><!-- Repeat Password --></label>
+                        <div class="formulario__grupo-input">
+                            <input type="password" class="formulario__input" name="password2" id="password2" placeholder="Password Repeat">
+                            <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario__input-error">Both passwords must be the same.                        </p>
+                    </div>
+        
+                    
+        
+<!--                     <div class="formulario__mensaje" id="formulario__mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Please fill out the form correctly                            . </p>
+                    </div>
+         -->
+                    <div class="formulario__grupo formulario__grupo-btn-enviar">
+                        <button @Click.prevent="register()" type="submit" class="form-btn">Sign Up</button>
+                        <!-- <p class="formulario__mensaje-exito " id="formulario__mensaje-exito">Form sent successfully!                        </p> -->
+                    </div>
+                </form>
+<!--                 <form @submit.prevent="register()">
+                    <h1>Create Account</h1>
+
+                    <span>use your email for registration</span>
+                    <input type="text" placeholder="Name" v-model="firstName" />
+                    <input type="text" placeholder="Last Name" v-model="lastName"/>
+                    <input type="email" placeholder="Email" v-model="email" />
+                    <input type="password" placeholder="Password" v-model="password" />
+                    <input type="submit" class="form-btn" value="Sign Up">
+                </form> -->
+            </div>
+            <div class="form-container sign-in-container">
+                <form @submit.prevent="logIn()">
+                    <h1>Sign in</h1>
+
+                    <span>use your account</span>
+                    <input type="email" placeholder="Email" v-model="email"/>
+                    <input type="password" placeholder="Password" v-model="password"/>
+                    <a href="#">Forgot your password?</a>
+                    <input type="submit" class="form-btn" value="Sign In">
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>Welcome Back!</h1>
+                        <!-- <p>To keep connected with us please login with your personal info</p> -->
+                        <button class="ghost" id="signIn" @click="switchLogIn()">Sign In</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Become Extrenght!</h1>
+                        <!-- <p>Enter your personal details and become a Extrenght</p> -->
+                        <button class="ghost" id="signUp" @click="switchSignUp()">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="./assets/js/login.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,122 @@
+.animacion-titulo2{
+    opacity: 0;
+    
+
+}
+
+.header-area .main-nav .logo {
+    line-height: 80px;
+    color: #fff;
+    font-size: 144%;
+    font-weight: 800;
+    text-transform: uppercase;
+    float: left;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+  }
+
+@media (max-width: 1061px) {
+
+    .main-banner .caption h2 {
+      font-size: 130%;
+    }
+
+    
+    /* footerresponsive */
+    .container-elements-footer{
+      display: flex;
+      flex-direction: column;
+
+  }
+ .footerGymLogo{
+      display: flex;
+      
+      flex-direction: column;
+      align-self: center;
+      margin-bottom: 10%;
+ }
+
+ .company-section{
+      display: flex;
+              
+      flex-direction: column;
+      align-self: center;
+      margin-bottom: 10%;
+  }
+
+  .account-section{
+      display: flex;
+          
+      flex-direction: column;
+      align-self: center;
+      margin-bottom: 10%;
+  }
+
+  .contact-us-section{
+      display: flex;
+          
+      flex-direction: column;
+      align-self: center;
+      margin-bottom: 10%;
+  }
+
+
+}
+
+
+
+/* 
+---------------------------------------------
+footer
+--------------------------------------------- 
+*/
+.footer {
+    
+  text-align: center;
+  padding: 30px 0px;
+  background-image: url(../images/close-up-of-many-metal-dumbbells-on-rack-in-sport-fitness-center.jpg);  border-top: 4px solid #d3b335;
+  /*background-image: url(../images/close-up-of-many-metal-dumbbells-on-rack-in-sport-fitness-center.jpg);
+  background-color: #383b40;*/
+  background-position-y: 65rem;
+}
+
+footer p {
+  color: #232d39;
+  font-size: 13px;
+}
+
+footer p a {
+  cursor: pointer;
+  color: #edc93b;
+}
+
+footer p a:hover {
+  color: #edc93b;
+}
+footer em{
+  color: #edc93b;
+}
+.footerGymLogo{
+  gap: 1rem;
+}
+.footerGymLogo h5{
+  font-weight: 800;
+}
+.footerLogo{
+  height: 5rem;
+}
+.media-container{
+  display: flex;
+  gap: 1rem;
+}
+.social-media{
+  margin-top: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 5rem;
+}
+.footerTexts{
+  gap: 1rem;
+}

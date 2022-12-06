@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+figure, header, nav, section, article, aside, footer, figcaption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+header, nav, section, article, aside, footer, hgroup {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+a {
+  text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+ul {
+  margin-bottom: 0px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+/* 
+---------------------------------------------
+global styles
+--------------------------------------------- 
+*/
+html,
+body {
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+  background: #edc93b;
+  color: #fff;
+}
+
+::-moz-selection {
+  background: #edc93b;
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  html, body {
+    overflow-x: hidden;
+  }
+  .mobile-top-fix {
+    margin-top: 30px;
+    margin-bottom: 0px;
+  }
+  .mobile-bottom-fix {
+    margin-bottom: 30px;
+  }
+  .mobile-bottom-fix-big {
+    margin-bottom: 60px;
+  }
+}
+
+.section-heading {
+  text-align: center;
+  margin-top: 140px;
+  margin-bottom: 80px;
+}
+
+.section-heading h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.section-heading h2 em {
+  font-style: normal;
+  color: #d4b332;
+}
+
+.section-heading img {
+  margin: 20px auto;
+}
+
+.dark-bg h2 {
+  color: #fff;
+}
+
+.dark-bg p {
+  color: #fff;
+}
+
+.main-button a {
+  display: inline-block;
+  font-size: 15px;
+  padding: 12px 20px;
+  background-color: #edc93b;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all .3s;
+  border-radius: 5px;
+}
+
+.main-button a:hover {
+  background-color: #5a5757;
+  color: #edc93b;
+  font-weight: 600;
+  opacity: 1;
+}
+
+
+
+/* 
+---------------------------------------------
+header
+--------------------------------------------- 
+*/
+
+.nav {
+  min-height: 50px;
+  width: 100%;
+  background-color: #383b40;
+  position: relative;
+  z-index: 100;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.15)!important;
+}
+.nav-title img{
+  height: 4rem;
+  float: left;
+}
+.logo{
+  line-height: 80px;
+  color: #fff;
+  font-size: 144%;
+  font-weight: 800;
+  text-transform: uppercase;
+  float: left;
+}
+.logo em{
+  font-style: normal;
+  color: #edc93b;
+  font-weight: 900;
+}
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav > .nav-links > a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #edcc3b;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:922px) {
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+    top: 1.5rem;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 85px;
+    left: 0px;
+  }
+  .signInBtn{
+    margin-right: 1rem !important;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #edcc3b;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+@media screen and (max-width:375px) {
+  .nav-title img{
+    display: none;
+  }
+}
+.signInBtn{
+  font-weight: 600;
+  color: black !important;
+  margin-left: 1rem;
+}
+.signInBtn:hover{
+  background-color: #5a5757 !important;
+  color: #edcc3b !important ;
+  border:#5a5757 ;
+}
+
+
+/* MAIN */
+main{
+    min-height: 91.2vh;
+    background-image: url(../images/managerbackground.jpg);
+}
+
+.managerForm{
+    min-height: 40rem;
+    width: 90vw;
+    margin-top:6rem;
+    margin-bottom: 2rem;
+    padding-bottom: 30px;
+    background: rgba( 255, 255, 255, 0.2 );
+    backdrop-filter: blur( 15px );
+    -webkit-backdrop-filter: blur( 15px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-radius: 22px;
+    box-shadow:  12px 12px 16px #000000,
+                 -12px -12px 16px #000000;
+}
+
+.line{
+border-bottom: #edcc3b 2px solid;
+width: 10.5%;
+height: fit-content;
+}
+.line2{
+border: #edcc3b 1px solid;
+width: 100%;
+}
+.form-control{
+    margin-top: .5rem;
+}
+
+@media screen and (min-width:320px) and (max-width:425px) {
+    .managerForm{
+        width: 91vw;
+    }
+    .responsive-form{
+        width:fit-content;
+    }
+    .addProducts h2{
+        font-size: 28.6px !important;
+
+    }
+    .line2{
+        display: none;
+    }
+    .uploadArchive{
+        width: 45%;
+    }
+    .responsive-inputs input{
+        width: fit-content;
+    }
+    .responsive-inputs h5{
+        font-size: small;
+    }
+    .responsive-delete{
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+    .header-area .main-nav .logo{
+        font-size: 23px;
+    }
+}
+@media screen and (max-width:991px) {
+    .header-area .main-nav .logo{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 1061px) {
+
+  .main-banner .caption h2 {
+    font-size: 130%;
+  }
+
+  
+  /* footerresponsive */
+  .container-elements-footer{
+    display: flex;
+    flex-direction: column;
+
+}
+.footerGymLogo{
+    display: flex;
+    
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.company-section{
+    display: flex;
+            
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.account-section{
+    display: flex;
+        
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.contact-us-section{
+    display: flex;
+        
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+
+}
+
+
+
+/* 
+---------------------------------------------
+footer
+--------------------------------------------- 
+*/
+.footer {
+  
+text-align: center;
+padding: 30px 0px;
+background-image: url(../images/close-up-of-many-metal-dumbbells-on-rack-in-sport-fitness-center.jpg);  border-top: 4px solid #d3b335;
+/*background-image: url(../images/close-up-of-many-metal-dumbbells-on-rack-in-sport-fitness-center.jpg);
+background-color: #383b40;*/
+background-position-y: 65rem;
+}
+
+footer p {
+color: #232d39;
+font-size: 13px;
+}
+
+footer p a {
+cursor: pointer;
+color: #edc93b;
+}
+
+footer p a:hover {
+color: #edc93b;
+}
+footer em{
+color: #edc93b;
+}
+.footerGymLogo{
+gap: 1rem;
+}
+.footerGymLogo h5{
+font-weight: 800;
+}
+.footerLogo{
+height: 5rem;
+}
+.media-container{
+display: flex;
+gap: 1rem;
+}
+.social-media{
+margin-top: 1rem;
+height: 2.5rem;
+width: 2.5rem;
+border-radius: 5rem;
+}
+.footerTexts{
+gap: 1rem;
+}

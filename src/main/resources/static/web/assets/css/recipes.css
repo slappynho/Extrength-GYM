@@ -1,0 +1,100 @@
+
+.recipe-container{
+  display: flex;
+  height: fit-content;
+  padding:3%;
+  border-radius: 10px;
+  border: 4px solid #d4b332;
+}
+
+.image-container{
+  display: flex;
+  width: fit-content;
+}
+
+#image-pastel-de-bananas{
+  width:30%;
+}
+
+em{
+  font-style: normal;
+  color: #d4b332;
+}
+
+.description{
+  font-family: sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#borderLanding{
+  padding:10%
+}
+
+.recipe-description{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+.oatmeal-with-banana{
+  font-size: 110%;
+}
+.trainer-item{
+  height: 635px;
+  width: 347px;
+}
+
+/*footer*/
+@media (max-width: 1061px) {
+
+  .main-banner .caption h2 {
+    font-size: 130%;
+  }
+
+  
+  /* footerresponsive */
+  .container-elements-footer{
+    display: flex;
+    flex-direction: column;
+
+}
+.footerGymLogo{
+    display: flex;
+    
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.company-section{
+    display: flex;
+            
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.account-section{
+    display: flex;
+        
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+.contact-us-section{
+    display: flex;
+        
+    flex-direction: column;
+    align-self: center;
+    margin-bottom: 10%;
+}
+
+
+}

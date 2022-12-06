@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+    <title>MANAGER</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/manager.css">
+    <link rel="shortcut icon" href="./assets/images/logoPagina.png" type="image/x-icon">
+</head>
+<body>
+    <div class="nav d-flex justify-content-between align-items-center">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+          <div class="nav-title d-flex align-items-center">
+            <img src="./assets/images/logoPagina.png" alt="">
+            <h2 class="logo ">Extrength<em>Gym</em></h2>
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+        
+        <div class="nav-links d-flex align-items-center">
+          <a href="indexC.html">Home</a>
+          <a href="indexC.html#schedule">Schedule</a>
+          <a href="food-recipes.html">Recipes</a>
+          <a href="products.html">Products</a>
+          <a href="indexC.html#contact">Contact</a>
+          <button class="signInBtn btn btn-warning mb-1" @click="logOut">Log Out</button>
+        </div>
+      </div>
+    <main class="d-flex align-items-center justify-content-center" id="app">
+        <div class="managerForm d-flex justify-content-around flex-wrap ">
+            <div class="w-100 d-flex flex-column align-items-center">
+                <h1 class="text-white text-center">Manager</h1>
+                <div class="line mt-1"></div>
+            </div>
+            <div class="responsive-form d-flex flex-column align-items-center">
+            <div class="responsive-form2">
+                <div class="addProducts">
+                    <h2 class="pt-5 text-white text-center">Add products to the store</h2>
+                </div>
+                <fieldset class="responsive-select d-flex flex-column align-items-center">
+                    <h5 class="text-white pt-5 pb-3">Select category</h5>
+                    <select  style="width:170px; height:30px;"
+                    aria-label="Default select example" v-model="category">
+                    <option value="none">Select a category</option>
+                    <option value="EQUIPMENT">EQUIPMENT</option>
+                    <option value="SUPPLEMENTS">SUPPLEMENTS</option>
+                    <option value="CLOTHES">CLOTHES</option>
+                </select>
+                </fieldset>
+                <fieldset class="responsive-inputs d-flex flex-column align-items-center">
+                    <h5 class="pt-4 text-white">Complete the required information.</h5>
+                    <input v-model="name" class="form-control" type="text" placeholder="Product/s name" aria-label="default input example">
+                    <br>
+                    <input v-model="description" class="form-control" type="text" placeholder="Product/s description" aria-label="default input example">
+                    <br>
+                    <input v-model="stock" class="form-control" type="text " placeholder="Stock" aria-label="default input example">
+                    <br>
+                    <input v-model="price" class="form-control" type="money " placeholder="Price" aria-label="default input example">
+                    <br>
+                    <div class="uploadArchive d-flex">
+                        <label for="formFileSm" class="form-label"></label>
+                        <input @change="onChangeFile($event)" type="file" name="file" id="file" >
+                      </div>
+                      <br>
+                    <button type="button" class="btn btn-outline-warning mt-2" @Click.prevent="addNewProduct()">Add product</button>
+                </fieldset>
+                <div class="line2 mt-3"></div>
+            </div>
+            </div>
+            <fieldset class="responsive-delete mt-5 d-flex flex-column align-items-center">
+                <h2 class="pt-5 text-white text-center">Delete products from the store</h2>
+                <h5 class="mt-5 text-white">Select Product</h5>
+                <select  style="width:170px; height:30px;"
+                    aria-label="Default select example"  v-model="ideaso" class="form-select">
+                    <option value="none">Select a Product</option>
+                    <option v-for="products in products" :value="products.id">{{products.name}}</option>
+                </select>
+                <br>
+                <div class="mt-5 d-flex flex-column align-items-center">
+
+                    <button type="button" class="btn btn-outline-warning mt-3" @Click.prevent="eraseProduct()">Delete product</button>
+                    <div class="line2 mt-3"></div>
+                </div>
+            </fieldset>
+        
+        </div>
+    </main>
+    <!-- ** Footer Start ** -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="container-elements-footer col-lg-12 d-flex justify-content-between">
+                    <div class="d-flex flex-column">
+                        <div class="footerGymLogo d-flex align-items-center">
+                            <img class="footerLogo" src="./assets/images/logoPagina.png" alt="page logo">
+                            <div class="d-flex flex-column">
+                                <h5 class="text-white">EXTRENGTH <em>GYM</em></h5>
+                                <div class="media-container">
+                                    <img class="social-media" src="./assets/images/logofb.jpg" alt="facebook logo">
+                                    <img class="social-media" src="./assets/images/logoig.jpg" alt="instagram logo">
+                                    <img class="social-media" src="./assets/images/logowp.jpg" alt="whatsapp logo">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-section">
+                        <h5 class="text-white pb-4">Company</h5>
+                        <div class="footerTexts d-flex flex-column">
+                            <a class="text-white-50" href="">About us</a>
+                            <a class="text-white-50" href="">Blog</a>
+                            <a class="text-white-50" href="">Affiliate Program</a>
+                            <a class="text-white-50" href="">Terms & Condition</a>
+                        </div>
+                    </div>
+                    <div class="account-section">
+                        <h5 class="text-white pb-4">Account</h5>
+                        <div class="footerTexts d-flex flex-column">
+                            <a class="text-white-50" href="">Login</a>
+                            <a class="text-white-50" href="">Affiliate Area</a>
+                            <a class="text-white-50" href="">Help</a>
+                        </div>
+                    </div>
+                    <div class="contact-us-section">
+                        <h5 class="text-white pb-4">Contact Us</h5>
+                        <div class="footerTexts d-flex flex-column">
+                            <p class="text-white-50">Address :<a href="Rio de Janeiro - State of Rio de Janeiro, Brazil">Av. Lucio Acosta 700</a></p>
+                            <p class="text-white-50">Phone: <a href="tel:+541122531186">+541122531186</a></p>
+                            <p class="text-white-50">Email:  <a href="mailto:extrenght@gmaill.com">
+                                extrenght@gmail.com   
+                               </a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="assets/js/manager.js"></script>
+</body>
+</html>
